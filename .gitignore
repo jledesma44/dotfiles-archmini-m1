@@ -1,3 +1,11 @@
 .DS_Store
 node_modules
 #Brewfile.lock.json
+
+# matugen-generated color files
+gtk-3.0/colors.css
+gtk-4.0/colors.css
+hypr/colors/matugen.conf
+kitty/colors/matugen.conf
+waybar/colors/matugen.css
+wlogout/styles/colors.css
