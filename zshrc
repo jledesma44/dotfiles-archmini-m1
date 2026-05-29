@@ -179,13 +179,18 @@ alias ybd="pacman -Qqem > ~/.dotfiles/2.Package-lists/pkglist_yay.txt"
 
 alias pacupdate="~/.dotfiles/1.Scripts/packages_install_update.zsh"
 
+#Alias for launching claude code =================================
+
+alias cc="claude"
+
 #Aliases for creating ssh keys for github =================================
 
 alias ssh-github="$HOME/.dotfiles/1.Scripts/setup-github-ssh.zsh"
 
-#Alias for running command for kmonad to start Slim-X1 keyboard =================================
+#Alias for running command for kmonad to start keyboards =================================
 
 alias slim="nohup kmonad ~/.config/kmonad/config/Slim-X1.kbd &"
+alias nuphy="nohup kmonad ~/.config/kmonad/config/nuphy-air-75.kbd &"
 
 # Prompt settings==========================================================
 
