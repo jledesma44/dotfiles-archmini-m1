@@ -1,9 +1,10 @@
+1password
 gazelle-tui
 hyprpanel
 librewolf-bin
-matugen-bin
+obsidian-bin
 python-pywal16
-vscodium-bin
+swaylock-effects
 wlogout
 yay-bin
 yay-bin-debug
