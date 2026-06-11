@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-# Script to open/toggle gazelle in a floating kitty window on Hyprland
+# Script to open/toggle impala in a floating kitty window on Hyprland
 
 # Toggle: if already open, close it
 if hyprctl clients -j | grep -q '"class": "wifi-tui"'; then
@@ -14,10 +14,10 @@ if ! command -v kitty &>/dev/null; then
   exit 1
 fi
 
-# Check if gazelle is installed
-if ! command -v gazelle &>/dev/null; then
-  echo "gazelle is not installed!"
-  echo "Install it with: yay -S gazelle-tui"
+# Check if impala is installed
+if ! command -v impala &>/dev/null; then
+  echo "impala is not installed!"
+  echo "Install it with: yay -S impala"
   exit 1
 fi
 
@@ -26,4 +26,4 @@ kitty --class wifi-tui \
   --title "Wifi Manager" \
   -o initial_window_width=1400 \
   -o initial_window_height=800 \
-  gazelle
+  impala
