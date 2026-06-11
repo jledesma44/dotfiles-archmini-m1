@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+bin/kmonad
 #Brewfile.lock.json
 
 # matugen-generated color files
