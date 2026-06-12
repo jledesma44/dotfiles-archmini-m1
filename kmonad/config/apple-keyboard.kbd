@@ -1,7 +1,7 @@
-;;Satechi slim-X1
+;;Apple Magic Keyboard (USB)
 (defcfg
   input (device-file "/dev/input/by-id/platform-noserial-event-kbd")
-  output (uinput-sink "Slim-x1 Keyboard")
+  output (uinput-sink "Apple Keyboard")
   fallthrough true
   allow-cmd true
 )
@@ -18,13 +18,13 @@
 (defalias
   ;; Hyper layer - define this first before referencing it
   hyperl (layer-toggle hyper)
-  
+
   ;; Open apps sublayer
   opn (layer-toggle open-apps)
-  
+
   ;; Tab acts as tab when tapped, hyper layer when held
   hyp (tap-hold-next-release 200 tab @hyperl)
-  
+
   ;; Caps Lock acts as escape when tapped, left ctrl when held
   cap (tap-hold-next 200 esc lctl)
 

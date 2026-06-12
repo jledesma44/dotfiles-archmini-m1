@@ -82,8 +82,8 @@
   //   "interval": 3600
   // },
 
-  "temperture": {
-    //Mac Mini 2012 CPU package temp
+  "temperature": {
+    // Mac Mini M1 - NAND Flash temp (closest available on Asahi, CPU die not exposed)
     "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
     "critical-threshold": 90,
     "format": "{temperatureC}°C",

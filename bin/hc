@@ -1,0 +1,5 @@
+#!/bin/bash
+# hyprctl wrapper for contexts without HYPRLAND_INSTANCE_SIGNATURE (e.g. systemd services)
+XDG_RUNTIME_DIR=/run/user/1001
+HYPRLAND_INSTANCE_SIGNATURE=$(ls "$XDG_RUNTIME_DIR/hypr/" 2>/dev/null | head -1)
+exec /usr/bin/hyprctl -i "$HYPRLAND_INSTANCE_SIGNATURE" "$@"
