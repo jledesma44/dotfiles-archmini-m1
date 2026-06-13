@@ -1,0 +1,4 @@
+# Enable wakeup from suspend for USB host controllers and devices.
+# Without this, only the power button can wake the machine from suspend.
+SUBSYSTEM=="usb", KERNEL=="usb[0-9]*", ATTR{power/wakeup}="enabled"
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{power/wakeup}="enabled"
