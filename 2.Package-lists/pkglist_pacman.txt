@@ -73,6 +73,7 @@ power-profiles-daemon
 qt5-wayland
 qt6-wayland
 quadrapassel
+rkhunter
 rofi
 rygel
 showtime

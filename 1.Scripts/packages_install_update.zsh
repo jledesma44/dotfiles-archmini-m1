@@ -20,7 +20,13 @@ sudo pacman -Syu --noconfirm
 
 # Install/update packages from pacman list
 echo -e "\n${BLUE}==> Installing pacman packages...${NC}"
-sudo pacman -S --noconfirm --needed $(grep -v '^[[:space:]]*$' "$PACMAN_LIST")
+while IFS= read -r pkg; do
+    [[ -z "$pkg" ]] && continue
+    echo -e "${BLUE}  Installing $pkg...${NC}"
+    if ! sudo pacman -S --noconfirm --needed "$pkg" 2>/dev/null; then
+        echo -e "${YELLOW}  Warning: Failed to install $pkg, skipping...${NC}"
+    fi
+done < "$PACMAN_LIST"
 
 # Install yay AUR helper if not already installed
 if ! command -v yay &>/dev/null; then
@@ -45,7 +51,20 @@ fi
 
 # Install/update packages from yay/AUR list
 echo -e "\n${BLUE}==> Installing AUR packages...${NC}"
-yay -S --noconfirm --needed $(grep -v '^[[:space:]]*$' "$YAY_LIST")
+while IFS= read -r pkg; do
+    [[ -z "$pkg" ]] && continue
+    echo -e "${BLUE}  Installing $pkg...${NC}"
+    if ! yay -S --noconfirm --needed "$pkg" 2>/dev/null; then
+        echo -e "${YELLOW}  Warning: Failed to install $pkg, skipping...${NC}"
+    fi
+done < "$YAY_LIST"
+
+# Install AUR packages that require special flags on Arch Linux ARM (aarch64)
+echo -e "\n${BLUE}==> Installing ARM-specific AUR packages...${NC}"
+echo -e "${BLUE}  Installing wlogout (--ignorearch for aarch64)...${NC}"
+if ! yay -S --noconfirm --needed --mflags "--ignorearch" wlogout 2>/dev/null; then
+    echo -e "${YELLOW}  Warning: Failed to install wlogout, skipping...${NC}"
+fi
 
 # kmonad: allow running as user via exec-once
 echo -e "\n${BLUE}==> Configuring kmonad permissions...${NC}"
