@@ -81,7 +81,6 @@ simple-scan
 snap-pac
 snapper
 snapshot
-spotify-launcher
 sudo
 sushi
 swayidle
