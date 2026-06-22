@@ -1,7 +1,7 @@
 ;;Nuphy-air-75
 (defcfg
-  input (device-file "/dev/input/by-id/usb-Nordic_Semiconductor_NuPhy_Air75_V2_Dongle-event-kbd")
-  output (uinput-sink "Kmondad output")
+  input (device-file "/dev/input/by-path/platform-690000000.pcie-pci-0000:02:00.0-usb-0:1.4.3:1.0-event-kbd")
+  output (uinput-sink "KMonad NuPhy-Air75")
   fallthrough true
   allow-cmd true
 )
@@ -30,17 +30,17 @@
 
   ;; In open-apps layer - launch if not running, otherwise just switch to workspace
   ;; Uses shell logic to check if app exists before launching
-  kit (cmd-button "sh -c 'hyprctl clients | grep -q \"class: kitty\" && hyprctl dispatch workspace 1 || (hyprctl dispatch exec \"[workspace 1 silent] kitty\" && hyprctl dispatch workspace 1)'")
-  ff (cmd-button "sh -c 'hyprctl clients | grep -q \"class: firefox\" && hyprctl dispatch workspace 2 || (hyprctl dispatch exec \"[workspace 2 silent] firefox\" && hyprctl dispatch workspace 2)'")
-  fd (cmd-button "sh -c 'hyprctl clients | grep -q \"class: firefox-developer-edition\" && hyprctl dispatch workspace 3 || (hyprctl dispatch exec \"[workspace 3 silent] firefox-developer-edition\" && hyprctl dispatch workspace 3)'")
-  lw (cmd-button "sh -c 'hyprctl clients | grep -q \"class: librewolf\" && hyprctl dispatch workspace 4 || (hyprctl dispatch exec \"[workspace 4 silent] librewolf\" && hyprctl dispatch workspace 4)'")
-  gh (cmd-button "sh -c 'hyprctl clients | grep -q \"class: chrome-github.com__-Default\" && hyprctl dispatch workspace 5 || (hyprctl dispatch exec \"[workspace 5 silent] chromium --app=\"https://github.com\"\" && hyprctl dispatch workspace 5)'")
-  cd (cmd-button "sh -c 'hyprctl clients | grep -q \"class: chrome-claude.ai__-Default\" && hyprctl dispatch workspace 6 || (hyprctl dispatch exec \"[workspace 6 silent] chromium --app=\"https://claude.ai\"\" && hyprctl dispatch workspace 6)'")
-  fg (cmd-button "sh -c 'hyprctl clients | grep -q \"class: figma.com__-Default\" && hyprctl dispatch workspace 7 || (hyprctl dispatch exec \"[workspace 7 silent] chromium --app=\"https://figma.com\"\" && hyprctl dispatch workspace 7)'")
-  vs (cmd-button "sh -c 'hyprctl clients | grep -q \"class: code\" && hyprctl dispatch workspace 8 || (hyprctl dispatch exec \"[workspace 8 silent] code\" && hyprctl dispatch workspace 8)'")
-  pas (cmd-button "sh -c 'hyprctl clients | grep -q \"class: 1password\" && hyprctl dispatch workspace 9 || (hyprctl dispatch exec \"[workspace 9 silent] 1password\" && hyprctl dispatch workspace 9)'")
-  spy (cmd-button "sh -c 'hyprctl clients | grep -qi \"class: spotify\" && hyprctl dispatch workspace 10 || (hyprctl dispatch exec \"[workspace 10 silent] spotify-launcher\" && hyprctl dispatch workspace 10)'")
-  thr (cmd-button "sh -c 'hyprctl clients | grep -q \"class: thunar\" && hyprctl dispatch workspace 11 || (hyprctl dispatch exec \"[workspace 11 silent] thunar\" && hyprctl dispatch workspace 11)'")
+  kit (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: kitty\" && /home/jledesma44/.local/bin/hc dispatch workspace 1 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 1 silent] kitty\" && /home/jledesma44/.local/bin/hc dispatch workspace 1)'")
+  ff (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: firefox\" && /home/jledesma44/.local/bin/hc dispatch workspace 2 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 2 silent] firefox\" && /home/jledesma44/.local/bin/hc dispatch workspace 2)'")
+  fd (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: firefox-developer-edition\" && /home/jledesma44/.local/bin/hc dispatch workspace 3 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 3 silent] firefox-developer-edition\" && /home/jledesma44/.local/bin/hc dispatch workspace 3)'")
+  lw (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: librewolf\" && /home/jledesma44/.local/bin/hc dispatch workspace 4 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 4 silent] librewolf\" && /home/jledesma44/.local/bin/hc dispatch workspace 4)'")
+  gh (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: chrome-github.com__-Default\" && /home/jledesma44/.local/bin/hc dispatch workspace 5 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 5 silent] chromium --app=\"https://github.com\"\" && /home/jledesma44/.local/bin/hc dispatch workspace 5)'")
+  cd (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: chrome-claude.ai__-Default\" && /home/jledesma44/.local/bin/hc dispatch workspace 6 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 6 silent] chromium --app=\"https://claude.ai\"\" && /home/jledesma44/.local/bin/hc dispatch workspace 6)'")
+  fg (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: figma.com__-Default\" && /home/jledesma44/.local/bin/hc dispatch workspace 7 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 7 silent] chromium --app=\"https://figma.com\"\" && /home/jledesma44/.local/bin/hc dispatch workspace 7)'")
+  vs (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: code\" && /home/jledesma44/.local/bin/hc dispatch workspace 8 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 8 silent] code\" && /home/jledesma44/.local/bin/hc dispatch workspace 8)'")
+  pas (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: 1password\" && /home/jledesma44/.local/bin/hc dispatch workspace 9 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 9 silent] 1password\" && /home/jledesma44/.local/bin/hc dispatch workspace 9)'")
+  spy (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -qi \"class: spotify\" && /home/jledesma44/.local/bin/hc dispatch workspace 10 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 10 silent] spotify-launcher\" && /home/jledesma44/.local/bin/hc dispatch workspace 10)'")
+  thr (cmd-button "sh -c '/home/jledesma44/.local/bin/hc clients | grep -q \"class: thunar\" && /home/jledesma44/.local/bin/hc dispatch workspace 11 || (/home/jledesma44/.local/bin/hc dispatch exec \"[workspace 11 silent] thunar\" && /home/jledesma44/.local/bin/hc dispatch workspace 11)'")
 )
 
 (deflayer base

@@ -1,6 +1,6 @@
 ;;Satechi slim-X1
 (defcfg
-  input (device-file "/dev/input/by-id/platform-noserial-event-kbd")
+  input (device-file "/dev/input/by-path/platform-690000000.pcie-pci-0000:02:00.0-usb-0:2:1.0-event-kbd")
   output (uinput-sink "Slim-x1 Keyboard")
   fallthrough true
   allow-cmd true

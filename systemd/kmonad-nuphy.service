@@ -1,0 +1,14 @@
+[Unit]
+Description=KMonad for NuPhy Air75 V2 keyboard
+After=systemd-udev-settle.service
+
+[Service]
+Type=simple
+User=jledesma44
+Environment=XDG_RUNTIME_DIR=/run/user/1001
+Environment=HOME=/home/jledesma44
+ExecStart=/home/jledesma44/.local/bin/kmonad /home/jledesma44/.config/kmonad/config/nuphy-air-75.kbd
+Restart=on-failure
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
