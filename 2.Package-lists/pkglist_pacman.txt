@@ -42,7 +42,6 @@ impala
 iwd
 jq
 kitty
-kmonad
 kvantum
 kvantum-qt5
 lazygit
