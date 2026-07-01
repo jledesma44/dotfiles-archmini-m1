@@ -1,3 +1,5 @@
+alejandra
 hyprpanel
 librewolf-bin
+wlogout
 yay
