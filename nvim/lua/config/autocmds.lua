@@ -13,3 +13,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.cmd("PencilSoft")
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "nix",
+  callback = function()
+    vim.b.autoformat = true
+  end,
+})
